@@ -2,8 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  entry: './src/index.tsx',
   output: {
-    path: path.join(__dirname, "/dist"), // the bundle output path
+    path: path.resolve(__dirname, 'dist'),
     filename: "bundle.js", // the name of the bundle
   },
   plugins: [
@@ -12,16 +13,19 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 8080, // you can change the port
+    static: path.join(__dirname, "dist"),
+    compress: true,
+    port: 8080,
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // .js and .jsx files
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/, // excluding the node_modules folder
-        use: {
-          loader: "babel-loader",
-        },
+        // use: {
+        // loader: "babel-loader",
+        loader: 'ts-loader',
+        // },
       },
       {
         test: /\.(sa|sc|c)ss$/, // styles files
@@ -33,5 +37,8 @@ module.exports = {
         options: { limit: false },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
 };
