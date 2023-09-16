@@ -2,17 +2,17 @@ import React from "react"
 import { MenuItem, Icon, Text, MenuList, MenuToggle, Menu } from "@tonic-ui/react"
 
 
-export type MyMenuData = {
+export type MenuButtonData = {
     icon: string,
     text: string,
     value: string
 }
 
-type MyMenuProps = {
-    data: MyMenuData[],
+type MenuButtonProps = {
+    data: MenuButtonData[],
     onSelectItem?: (value: string) => void
 }
-const MyMenu = ({ data, onSelectItem = () => { } }: MyMenuProps) => {
+const MenuButton = ({ data, onSelectItem = () => { } }: MenuButtonProps) => {
     return (<Menu>
         <MenuToggle
             backgroundColor="gray:50"
@@ -37,4 +37,4 @@ const MyMenu = ({ data, onSelectItem = () => { } }: MyMenuProps) => {
     </Menu>)
 }
 
-export default MyMenu
+export default MenuButton

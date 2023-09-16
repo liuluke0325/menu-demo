@@ -2,15 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import MyMenu from '../components/MyMenu'
+import MenuButton from '../components/MenuButton'
 import { mockMenu } from '../mockValue/mockValue'
 import { TonicProvider } from '@tonic-ui/react';
 
 test('should loads and displays Menu correctly', async () => {
-    // ARRANGE
     render(
         <TonicProvider>
-            <MyMenu data={mockMenu} />
+            <MenuButton data={mockMenu} />
         </TonicProvider>)
 
 

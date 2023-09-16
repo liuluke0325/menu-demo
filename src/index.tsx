@@ -8,13 +8,7 @@ const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <TonicProvider
-      // colorMode={{
-      //   defaultValue: 'dark', // One of: 'dark', 'light'
-      // }}
-      // colorStyle={{
-      //   defaultValue: colorStyle, // Custom color style
-      // }}
-      useCSSBaseline={true} // If `true`, apply CSS reset and base styles
+      useCSSBaseline={true}
     >
       <App />
     </TonicProvider>

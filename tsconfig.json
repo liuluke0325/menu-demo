@@ -1,8 +1,11 @@
 {
- "compilerOptions": {
+  "compilerOptions": {
     "rootDir": "src",
     "outDir": "build",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "target": "es5",
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,7 +18,15 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "exclude": ["node_modules", "build", "coverage", "webpack.*.js", "*.config.js", "*.test.ts*"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "coverage",
+    "webpack.*.js",
+    "*.config.*",
+    "*.test.ts*",
+    "*.spec.ts*"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
