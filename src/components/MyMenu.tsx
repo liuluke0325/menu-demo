@@ -1,17 +1,18 @@
-import { Flex, MenuItem, Icon, MenuDivider, Text, MenuList, MenuToggle, MenuToggleIcon, Menu, Box } from "@tonic-ui/react"
 import React from "react"
+import { MenuItem, Icon, Text, MenuList, MenuToggle, Menu } from "@tonic-ui/react"
 
-export type MyMenuData<T = string> = {
+
+export type MyMenuData = {
     icon: string,
-    text: string
-    value: T
+    text: string,
+    value: string
 }
 
-type MyMenuProps<T = string> = {
-    data: MyMenuData<T>[]
-    onSelectItem?: (value: T) => void
+type MyMenuProps = {
+    data: MyMenuData[],
+    onSelectItem?: (value: string) => void
 }
-const MyMenu = ({ data, onSelectItem }: MyMenuProps) => {
+const MyMenu = ({ data, onSelectItem = () => { } }: MyMenuProps) => {
     return (<Menu>
         <MenuToggle
             backgroundColor="gray:50"
@@ -26,7 +27,7 @@ const MyMenu = ({ data, onSelectItem }: MyMenuProps) => {
         </MenuToggle>
         <MenuList width="48x" backgroundColor="gray:60">
             {data.map((it, index) => {
-                // assume the list won't be changed.
+                // assume the list won't be changed, index as key
                 return <MenuItem key={index} color="white:primary" onClick={() => onSelectItem(it.value)}>
                     <Icon icon={it.icon} />
                     <Text marginLeft="3x" style={{ marginLeft: "10px" }}>{it.text}</Text>

@@ -1,5 +1,5 @@
-import React, { useMemo } from "react";
-import MyMenu, { MyMenuData } from "./components/MyMenu";
+import React from "react";
+import MyMenu from "./components/MyMenu";
 import { Flex } from "@tonic-ui/react";
 import { mockMenu } from "./mockValue/mockValue";
 
